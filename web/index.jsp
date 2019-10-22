@@ -9,7 +9,14 @@
 <body>
 
 
-<h3><a href="StudentListPageServlet?currentPage=1">显示所有学生</a></h3>
+
+<jsp:forward page="login.jsp"></jsp:forward>
+<%--<%--%>
+<%--    request.getRequestDispatcher("/listServlet").forward(request, response);--%>
+<%--%>--%>
+
+<%--<h3><a href="StudentListPageServlet?currentPage=1">显示所有学生信息</a></h3>--%>
+<%--<h3><a href="StudentListServlet">显示学生成绩</a></h3>--%>
 
 </body>
 </html>

@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.itheima.domain.ClassBean;
+import com.itheima.domain.UserBean;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -36,13 +38,14 @@ public class StudentDaoImpl implements StudentDao {
 	public void insert(Student student) throws SQLException {
 		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
 		
-		runner.update("insert into stu values(null , ?,?,?,?,?,?)" ,
+		runner.update("insert into stu (sno,sname,gender,phone,birthday,cs,grade) values(?,?,?,?,?,?,?)" ,
+				student.getSno(),
 				student.getSname(),
 				student.getGender(),
 				student.getPhone(),
 				student.getBirthday(),
-				student.getHobby(),
-				student.getInfo()
+				student.getCs(),
+				student.getGrade()
 				);
 	}
 
@@ -62,13 +65,14 @@ public class StudentDaoImpl implements StudentDao {
 	public void update(Student student) throws SQLException {
 		
 		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
-		runner.update("update stu set sname=? , gender=? , phone=? , birthday=? , hobby=? , info=? where sid = ?", 
+		runner.update("update stu set sno=? , sname=? , gender=? , phone=? , birthday=? , cs=? , grade=? where sid = ?",
+				student.getSno(),
 				student.getSname(),
 				student.getGender(),
 				student.getPhone(),
 				student.getBirthday(),
-				student.getHobby(),
-				student.getInfo(),
+				student.getCs(),
+				student.getGrade(),
 				student.getSid());
 	}
 
@@ -129,4 +133,45 @@ public class StudentDaoImpl implements StudentDao {
 		return result.intValue();
 	}
 
+
+	@Override
+	public boolean checkUserName(String username) throws SQLException {
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		String sql = "select count(*) from users where username = ?";
+		//runner.query(sql, new ScalarHandler(), username);
+		Long result = (Long) runner.query(sql, new  ScalarHandler(), username);
+		return result > 0 ;
+	}
+
+	@Override
+	public UserBean login(UserBean user) throws SQLException {
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		String sql = "select * from users where username = ? and password = ? ";
+		UserBean query = runner.query(sql, new BeanHandler<UserBean>(UserBean.class),user.getUsername(),user.getPassword());
+		return query;
+	}
+
+
+
+	@Override
+	public void updateCard(Student student) throws SQLException {
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		runner.update("update stu set sno=? , sname=? , ch=? , en=? , math=? , physics=? , chemistry=? where sid = ?",
+				student.getSno(),
+				student.getSname(),
+				student.getCh(),
+				student.getEn(),
+				student.getMath(),
+				student.getPhysics(),
+				student.getChemistry(),
+				student.getSid());
+	}
+
+
+	@Override
+	public List<ClassBean> searchClass(String sname) throws SQLException {
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		String sql = "SELECT * FROM `class` where sno=?";
+		return runner.query(sql,new BeanListHandler<ClassBean>(ClassBean.class),sname);
+	}
 }

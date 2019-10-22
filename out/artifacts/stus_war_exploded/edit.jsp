@@ -9,6 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>更新学生页面</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
 
@@ -16,10 +19,14 @@
 <body>
 
 <h3>更新学生页面</h3>
-
+<center>
 <form method="post" action="UpdateServlet">
 	<input type="hidden" name="sid" value="${stu.sid }">
-  <table border="1" width="600">
+  <table border="1" width="1000" class="table table-bordered table-striped table-hover">
+	  <tr>
+		  <td>学号</td>
+		  <td><input type="text" name="sno" value="${stu.sno}"></td>
+	  </tr>
   <tr>
 	<td>姓名</td>
 	<td><input type="text" name="sname" value="${stu.sname }"></td>
@@ -42,28 +49,30 @@
 	<td><input type="text" name="birthday" value="${stu.birthday }"></td>
   </tr>
   <tr>
-	<td>爱好</td>
+	<td>班级</td>
+	<td><input type="text" name="cs" value="${stu.cs}"></td>
 	
-	
-	<td>
-		<!-- 爱好： 篮球 ， 足球 ， 看书 
+	<%--<td>
+		<!-- 爱好： 篮球 ， 足球 ， 看书
 		因为爱好有很多个，  里面存在包含的关系 -->
 		<input type="checkbox" name="hobby" value="游泳" <c:if test="${fn:contains(stu.hobby,'游泳') }">checked</c:if>>游泳
 		<input type="checkbox" name="hobby" value="篮球" <c:if test="${fn:contains(stu.hobby,'篮球') }">checked</c:if>>篮球
 		<input type="checkbox" name="hobby" value="足球" <c:if test="${fn:contains(stu.hobby,'足球') }">checked</c:if>>足球
 		<input type="checkbox" name="hobby" value="看书" <c:if test="${fn:contains(stu.hobby,'看书') }">checked</c:if>>看书
 		<input type="checkbox" name="hobby" value="写字" <c:if test="${fn:contains(stu.hobby,'写字') }">checked</c:if>>写字
-	
-	</td>
+
+	</td>--%>
   </tr>
   <tr>
-	<td>简介</td>
-	<td><textarea name="info" rows="3" cols="20">${stu.info }</textarea></td>
+	<td>年级</td>
+	  <td><input type="text" name="grade" value="${stu.grade}"></td>
+<%--	<td><textarea name="info" rows="3" cols="20">${stu.info }</textarea></td>--%>
   </tr>
   <tr>
-	<td colspan="2"> <input type="submit" value="更新"> </td>
+	<td colspan="2"> <input type="submit" value="更新" class="btn btn-success"> </td>
   </tr>
   </table>
    </form>
+</center>
 </body>
 </html>

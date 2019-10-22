@@ -25,30 +25,28 @@ import com.itheima.service.impl.StudentServiceImpl;
 public class AddServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		request.setCharacterEncoding("UTF-8");
-		
-		
 		try {
-
 			//1. 获取客户端提交上来的数据
+			int sno =Integer.parseInt(request.getParameter("sno"));
 			String sname = request.getParameter("sname"); //sname:zhangsan
 			String gender = request.getParameter("gender");
 			String phone = request.getParameter("phone");
 			String birthday = request.getParameter("birthday"); // 1989-10-18
-			String info = request.getParameter("info");
+			String cs = request.getParameter("cs");
+			String grade = request.getParameter("grade");
 			//String hobby = request.getParameter("hobby");//hobby : 游泳，写字， 足球。
-			String [] h  = request.getParameterValues("hobby");
+			//String [] h  = request.getParameterValues("hobby");
 //			[篮球，足球，写字] --- 篮球，足球，写字
 			
-			String hobby = Arrays.toString(h);
-			hobby = hobby.substring(1, hobby.length()-1);
+			/*String hobby = Arrays.toString(h);
+			hobby = hobby.substring(1, hobby.length()-1);*/
 			
 			//2. 添加到数据库
 			//string -- date
 			Date date= new SimpleDateFormat("yyyy-MM-dd").parse(birthday);
 			
-			Student student = new Student(sname, gender, phone, hobby, info, date);
+			Student student = new Student(sno,sname, gender, phone, cs, grade, date);
 			StudentService service = new StudentServiceImpl();
 			service.insert(student);
 			
@@ -58,7 +56,7 @@ public class AddServlet extends HttpServlet {
 			//request.getRequestDispatcher("list.jsp").forward(request, response);
 			
 			//servlet除了能跳jsp之外。 还能跳servlet
-			request.getRequestDispatcher("StudentListServlet").forward(request, response);
+			request.getRequestDispatcher("StudentListPageServlet?currentPage=1").forward(request, response);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

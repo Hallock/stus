@@ -3,7 +3,9 @@ package com.itheima.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.itheima.domain.ClassBean;
 import com.itheima.domain.Student;
+import com.itheima.domain.UserBean;
 
 /**
  * 这是针对学生表的数据访问 
@@ -12,7 +14,7 @@ import com.itheima.domain.Student;
  */
 public interface StudentDao {
 	
-	int PAGE_SIZE = 5; //一页显示多少条记录
+	int PAGE_SIZE = 10; //一页显示多少条记录
 	
 	/**
 	 * 查询当页的学生数据
@@ -73,6 +75,32 @@ public interface StudentDao {
 	 * @throws SQLException
 	 */
 	int findCount()throws SQLException ;
-	
-	
+
+
+
+
+	/**
+	 * 用于检测用户名是否存在
+	 * @param username
+	 * @return true : 存在 ，false : 不存在
+	 */
+	boolean checkUserName(String username) throws SQLException;
+	/**
+	 * 用户登录
+	 *
+	 * @param user
+	 * @return
+	 * @throws SQLException
+	 */
+	UserBean login(UserBean user) throws SQLException;
+
+	/**
+	 * 更新学生成绩信息
+	 * @param student 需要更新的学生数据
+	 * @throws SQLException
+	 */
+	void updateCard(Student student)throws SQLException ;
+
+	List<ClassBean> searchClass(String sname)  throws SQLException ;
+
 }

@@ -27,15 +27,19 @@ public class StudentListPageServlet extends HttpServlet {
 		try {
 			//1. 获取需要显示的页码数
 			int currentPage =Integer.parseInt( request.getParameter("currentPage"));
-			
-			//2. 根据指定的页数，去获取该页的数据回来
-			//List<Student> --- list.jsp
-			
+			int type =Integer.parseInt( request.getParameter("type"));
+			System.out.println("type="+type);
 			StudentService service = new StudentServiceImpl();
 			PageBean pageBean= service.findStudentByPage(currentPage);
 			request.setAttribute("pageBean", pageBean);
 			//3. 跳转界面。
-			request.getRequestDispatcher("list_page.jsp").forward(request, response);
+			if (type==2){
+				request.getRequestDispatcher("list_tea.jsp").forward(request, response);
+			}else {
+				request.getRequestDispatcher("list_page.jsp").forward(request, response);
+			}
+
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

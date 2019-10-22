@@ -23,6 +23,7 @@ public class SearchStudentServlet extends HttpServlet {
 	
 		request.setCharacterEncoding("UTF-8");
 		try {
+           // int currentPage =Integer.parseInt( request.getParameter("currentPage"));
 			//1. 取到了要查询的关键数据 姓名  ， 性别。
 			String sname=  request.getParameter("sname");
 			String sgender=  request.getParameter("sgender");
@@ -30,13 +31,7 @@ public class SearchStudentServlet extends HttpServlet {
 			//2. 找service去查询
 			StudentService service = new StudentServiceImpl();
 			List<Student> list = service.searchStudent(sname, sgender);
-			
-			
-			System.out.println("list的大小是："+list.size());
-			for (Student student : list) {
-				System.out.println("stu="+student);
-			}
-			
+
 			request.setAttribute("list", list);
 			
 			//3. 跳转界面。列表界面

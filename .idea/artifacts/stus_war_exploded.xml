@@ -8,6 +8,8 @@
           <element id="module-output" name="stus" />
         </element>
       </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/web/css" />
+      <element id="dir-copy" path="$PROJECT_DIR$/web/js" />
     </root>
   </artifact>
 </component>

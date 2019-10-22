@@ -23,6 +23,18 @@
         <servlet-name>StudentListServlet</servlet-name>
         <url-pattern>/StudentListServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>cardListServlet</display-name>
+        <servlet-name>cardListServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.cardListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cardListServlet</servlet-name>
+        <url-pattern>/cardListServlet</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <description></description>
         <display-name>AddServlet</display-name>
@@ -82,5 +94,83 @@
     <servlet-mapping>
         <servlet-name>StudentListPageServlet</servlet-name>
         <url-pattern>/StudentListPageServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>checkUserServlet</display-name>
+        <servlet-name>checkUserServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.checkUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkUserServlet</servlet-name>
+        <url-pattern>/checkUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>loginServlet</display-name>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.loginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>UpdateCardServlet</display-name>
+        <servlet-name>UpdateCardServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.UpdateCardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCardServlet</servlet-name>
+        <url-pattern>/UpdateCardServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <description></description>
+        <display-name>EditCardServlet</display-name>
+        <servlet-name>EditCardServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.EditCardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditCardServlet</servlet-name>
+        <url-pattern>/EditCardServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>StuListServlet</display-name>
+        <servlet-name>StuListServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.StuListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StuListServlet</servlet-name>
+        <url-pattern>/StuListServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>SearchStuServlet</display-name>
+        <servlet-name>SearchStuServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.SearchStuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchStuServlet</servlet-name>
+        <url-pattern>/SearchStuServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>StudentListTeaServlet</display-name>
+        <servlet-name>StudentListTeaServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.StudentListTeaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentListTeaServlet</servlet-name>
+        <url-pattern>/StudentListTeaServlet</url-pattern>
     </servlet-mapping>
 </web-app>

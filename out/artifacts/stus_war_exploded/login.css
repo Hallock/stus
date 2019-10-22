@@ -1,0 +1,81 @@
+#h1_name {
+    color: black;
+}
+
+#div01 {
+    width: 31.25rem;
+    height: 25rem;
+    background-color: white;
+}
+
+#body {
+    margin-top: 9.375rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #5a9fd0;
+    /*center / cover;*/
+}
+
+#font {
+    font-size: 1.5625rem;
+}
+
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+select{
+    /*-web-kit-appearance: none;*/
+    /*-moz-appearance: none;*/
+
+    display: block;
+    margin-bottom:15px;
+    /*margin: 0 auto;*/
+    font-size: 15px;
+    width: 240px;
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    /*outline: 0;*/
+}
+
+input[type="text"], input[type="submit"], input[type="password"] {
+    -web-kit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    width: 240px;
+}
+
+input[type="text"] {
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    outline: 0;
+}
+
+input[type="password"] {
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    outline: 0;
+}
+
+input[type="submit"] {
+    margin-top: 25px;
+    height: 35px;
+    background: #357eb8;
+    color: #bcedff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background: #0e62a3;
+    cursor: pointer;
+}

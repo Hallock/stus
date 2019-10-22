@@ -3,6 +3,7 @@ package com.itheima.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.itheima.domain.ClassBean;
 import com.itheima.domain.PageBean;
 import com.itheima.domain.Student;
 
@@ -63,4 +64,13 @@ public interface StudentService {
 	 * @throws SQLException
 	 */
 	void update(Student student)throws SQLException ;
+
+	/**
+	 * 更新学生成绩信息
+	 * @param student 需要更新的学生数据
+	 * @throws SQLException
+	 */
+	void updateCard(Student student)throws SQLException ;
+
+	List<ClassBean> searchClass(String sname)  throws SQLException ;
 }

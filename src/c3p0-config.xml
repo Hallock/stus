@@ -6,7 +6,7 @@
     <property name="driverClass">com.mysql.jdbc.Driver</property>
     <property name="jdbcUrl">jdbc:mysql://localhost/stus</property>
     <property name="user">root</property>
-    <property name="password">root</property>
+    <property name="password">toor</property>
     
     
     <property name="initialPoolSize">10</property>

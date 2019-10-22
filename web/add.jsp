@@ -5,6 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>添加学生页面</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 </head>
 
@@ -12,9 +15,14 @@
 <body>
 
 <h3>添加学生页面</h3>
-
+<div class="container-fluid">
+<center>
 <form method="post" action="AddServlet">
-  <table border="1" width="600">
+  <table width="700px" class="table table-hover">
+	  <tr>
+		  <td>学号</td>
+		  <td><input type="number" oninput = "value=value.replace(/[^\d]/g,'')" name="sno"></td>
+	  </tr>
   <tr>
 	<td>姓名</td>
 	<td><input type="text" name="sname"></td>
@@ -35,24 +43,28 @@
 	<td><input type="text" name="birthday"></td>
   </tr>
   <tr>
-	<td>爱好</td>
-	<td>
+	<td>班级</td>
+	  <td><input type="text" name="cs"></td>
+	<%--<td>
 		<input type="checkbox" name="hobby" value="游泳">游泳
 		<input type="checkbox" name="hobby" value="篮球">篮球
 		<input type="checkbox" name="hobby" value="足球">足球
 		<input type="checkbox" name="hobby" value="看书">看书
 		<input type="checkbox" name="hobby" value="写字">写字
 	
-	</td>
+	</td>--%>
   </tr>
   <tr>
-	<td>简介</td>
-	<td><textarea name="info" rows="3" cols="20"></textarea></td>
+	<td>年级</td>
+	  <td><input type="text" name="grade"></td>
+<%--	<td><textarea name="info" rows="3" cols="20"></textarea></td>--%>
   </tr>
   <tr>
-	<td colspan="2"> <input type="submit" value="添加"> </td>
+	<td colspan="2"> <input type="submit" value="添加" class="btn btn-success"> </td>
   </tr>
   </table>
    </form>
+</center>
+</div>
 </body>
 </html>
