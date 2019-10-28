@@ -54,16 +54,10 @@
 </style>
 <body>
 <div id="div01">
-<%--    <p>用户管理</p>--%>
-
-<%--    <ul>--%>
-<%--        <li><a href="../UserListServlet" tppabs="*" target="showframe">用户列表</a></li>--%>
-<%--    </ul>--%>
-
     <p>管理</p>
     <ul>
         <li><a href="StuListServlet?user=${userBean.username}" tppabs="*" target="showframe">我的成绩</a></li>
-        <li><a href="myClass.jsp" tppabs="*" target="showframe">我的课程</a></li>
+        <li><a href="ClassTeaServlet" tppabs="*" target="showframe">我的课程</a></li>
     </ul>
 
 </div>

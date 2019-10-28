@@ -20,7 +20,7 @@
 
 <h3>更新学生页面</h3>
 <center>
-<form method="post" action="UpdateServlet">
+<form method="post" action="UpdateAdminServlet">
 	<input type="hidden" name="sid" value="${stu.sid }">
   <table border="1" width="1000" class="table table-bordered table-striped table-hover">
 	  <tr>

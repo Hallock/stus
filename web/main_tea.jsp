@@ -4,7 +4,7 @@
     <frame src="font.jsp" tppabs="*" noresize="noresize" scrolling="NO"/>
     <frameset cols="150,*">
         <frame src="contents_tea.jsp" tppabs="*" noresize="noresize" scrolling="NO">
-        <frame src="StudentListPageServlet?currentPage=1&type=${userBean.type}" tppabs="*" name="showframe">
+        <frame src="StudentListPageServlet?currentPage=1&type=2" tppabs="*" name="showframe">
     </frameset>
     <noframes></noframes>
 </frameset>

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.itheima.domain.ClassBean;
+import com.itheima.domain.ClassTeaBean;
 import com.itheima.domain.PageBean;
 import com.itheima.domain.Student;
 
@@ -73,4 +74,6 @@ public interface StudentService {
 	void updateCard(Student student)throws SQLException ;
 
 	List<ClassBean> searchClass(String sname)  throws SQLException ;
+
+	List<ClassTeaBean> ClassAll()  throws SQLException ;
 }

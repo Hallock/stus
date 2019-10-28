@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.itheima.domain.ClassBean;
+import com.itheima.domain.ClassTeaBean;
 import com.itheima.domain.UserBean;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -173,5 +174,24 @@ public class StudentDaoImpl implements StudentDao {
 		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
 		String sql = "SELECT * FROM `class` where sno=?";
 		return runner.query(sql,new BeanListHandler<ClassBean>(ClassBean.class),sname);
+	}
+
+	@Override
+	public List<ClassTeaBean> ClassAll() throws SQLException {
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		String sql = "SELECT * FROM `myclass` ";
+		return runner.query(sql,new BeanListHandler<ClassTeaBean>(ClassTeaBean.class));
+	}
+
+	@Override
+	public void updateTeaClass(ClassTeaBean classTeaBean) throws SQLException {
+		QueryRunner runner = new QueryRunner(JDBCUtil02.getDataSource());
+		String sql = "update  `myclass` set yi=? , er=? , san=? , si=? , wu=? where id=?";
+		runner.update(sql,
+				classTeaBean.getYi(),
+				classTeaBean.getEr(),
+				classTeaBean.getSan(),
+				classTeaBean.getSi(),
+				classTeaBean.getWu());
 	}
 }

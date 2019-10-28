@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.itheima.domain.ClassBean;
+import com.itheima.domain.ClassTeaBean;
 import com.itheima.domain.Student;
 import com.itheima.domain.UserBean;
 
@@ -101,6 +102,20 @@ public interface StudentDao {
 	 */
 	void updateCard(Student student)throws SQLException ;
 
+	/**
+	 * 学生登录查询自己的成绩
+	 * @param sname
+	 * @return
+	 * @throws SQLException
+	 */
 	List<ClassBean> searchClass(String sname)  throws SQLException ;
 
+	/**
+	 * 老师课程
+	 * @return
+	 * @throws SQLException
+	 */
+	List<ClassTeaBean> ClassAll()  throws SQLException ;
+
+	void updateTeaClass(ClassTeaBean classTeaBean) throws SQLException;
 }

@@ -63,7 +63,7 @@
     <p>管理</p>
     <ul>
         <li><a href="StudentListPageServlet?currentPage=1&type=${userBean.type}" tppabs="*" target="showframe">学生信息</a></li>
-        <li><a href="myClass.jsp" tppabs="*" target="showframe">学生课程</a></li>
+        <li><a href="ClassTeaServlet" tppabs="*" target="showframe">学生课程</a></li>
     </ul>
 
 </div>

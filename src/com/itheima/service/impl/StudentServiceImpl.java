@@ -6,6 +6,7 @@ import java.util.List;
 import com.itheima.dao.StudentDao;
 import com.itheima.dao.impl.StudentDaoImpl;
 import com.itheima.domain.ClassBean;
+import com.itheima.domain.ClassTeaBean;
 import com.itheima.domain.PageBean;
 import com.itheima.domain.Student;
 import com.itheima.service.StudentService;
@@ -84,5 +85,10 @@ public class StudentServiceImpl implements StudentService{
 	@Override
 	public List<ClassBean> searchClass(String sname) throws SQLException {
 		return new StudentDaoImpl().searchClass(sname);
+	}
+
+	@Override
+	public List<ClassTeaBean> ClassAll() throws SQLException {
+		return new StudentDaoImpl().ClassAll();
 	}
 }

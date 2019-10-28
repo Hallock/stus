@@ -173,4 +173,52 @@
         <servlet-name>StudentListTeaServlet</servlet-name>
         <url-pattern>/StudentListTeaServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ClassTeaServlet</display-name>
+        <servlet-name>ClassTeaServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.ClassTeaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassTeaServlet</servlet-name>
+        <url-pattern>/ClassTeaServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <description></description>
+        <display-name>UpdataTeaClassServlet</display-name>
+        <servlet-name>UpdataTeaClassServlet</servlet-name>
+        <servlet-class> com.itheima.servlet.UpdataTeaClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdataTeaClassServlet</servlet-name>
+        <url-pattern>/UpdataTeaClassServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ClassStuServlet</display-name>
+        <servlet-name>ClassStuServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.ClassStuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassStuServlet</servlet-name>
+        <url-pattern>/ClassStuServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <servlet>
+        <description></description>
+        <display-name>UpdateAdminServlet</display-name>
+        <servlet-name>UpdateAdminServlet</servlet-name>
+        <servlet-class>com.itheima.servlet.UpdateAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAdminServlet</servlet-name>
+        <url-pattern>/UpdateAdminServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
